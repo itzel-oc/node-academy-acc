@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NpmComponent } from './pages/npm/npm.component';
+import {RunkitModule} from './shared/runkit/runkit.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NpmComponent } from './pages/npm/npm.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RunkitModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-runkit',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./runkit.component.scss']
 })
 export class RunkitComponent implements OnInit {
+
+  @Input() source = '';
+  @Input() preamble = '';
 
   constructor() { }
 
