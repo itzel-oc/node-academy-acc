@@ -1,0 +1,63 @@
+<div class="display-4">Exercise 1</div>
+<h2 class="mt-5">Requirements</h2>
+<ul>
+  <li>Create a npm project</li>
+  <li>Create a function that creates a file with a log message</li>
+  <li>The function should accept three arguments</li>
+  <li>The first argument should be the name and path of your file; ie. <b>my/path/fileName</b></li>
+  <li>The second argument should be the Level of the message</li>
+  <li>The third argument should be the message that you want to log</li>
+</ul>
+<h2 class="mt-5">Setting your npm project</h2>
+<ul>
+  <li>Run the following commands</li>
+</ul>
+<app-command-line [source]="initProject"></app-command-line>
+<h2 class="mt-5">Creating your function</h2>
+<ul>
+  <li>Create a file called <b>logger.js</b></li>
+</ul>
+<markdown ngPreserveWhitespaces data-type="text/html">
+  > logger.js
+  ```javascript
+  const fs = require('fs');
+  const path = require('path');
+  module.exports = (logPath, level, message) => {{ '{' }}
+    const p = path.resolve(logPath);
+    const log = `${{ '{' }}new Date().toString(){{ '}' }}   ${{ '{' }}level{{ '}' }}    ${{ '{' }}message{{ '}' }}`;
+    fs.writeFile(p, log, (err) => {{ '{' }}
+      if(err) {{ '{' }}
+        console.log(err);
+      {{ '}' }}
+    {{ '}' }});
+  {{ '}' }};
+  ```
+</markdown>
+<ul>
+  <li>Add the following code in the <b>index.js</b> file</li>
+</ul>
+<markdown ngPreserveWhitespaces data-type="text/html">
+  > index.js
+  ```javascript
+  module.exports = {{ '{' }}
+    logger: require('./logger')
+  {{ '}' }};
+  ```
+</markdown>
+<ul>
+  <li>To test your code run the following commands in the node repl</li>
+</ul>
+<app-command-line [source]="indexFileContent"></app-command-line>
+<ul>
+  <li>Run the following code in your node repl</li>
+</ul>
+<markdown ngPreserveWhitespaces data-type="text/html">
+  ```javascript
+  const util = require('logUtil');
+  util.logger('./hello-world.txt', 'INFO', 'Hello World!');
+  ```
+</markdown>
+
+
+
+
