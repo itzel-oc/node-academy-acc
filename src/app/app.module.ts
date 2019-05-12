@@ -6,6 +6,27 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NpmComponent } from './pages/npm/npm.component';
 import {RunkitModule} from './shared/runkit/runkit.module';
+import {PrismComponentsModule} from './shared/prism-components/prism-components.module';
+import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
+
+export function markedOptions(): MarkedOptions {
+  const renderer = new MarkedRenderer();
+
+  renderer.blockquote = (text: string) => {
+    return '<blockquote class="blockquote"><p>' + text + '</p></blockquote>';
+  };
+
+  return {
+    renderer: renderer,
+    gfm: true,
+    tables: true,
+    breaks: false,
+    pedantic: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+  };
+}
 
 @NgModule({
   declarations: [
@@ -16,7 +37,14 @@ import {RunkitModule} from './shared/runkit/runkit.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RunkitModule
+    RunkitModule,
+    PrismComponentsModule,
+    MarkdownModule.forRoot({
+      markedOptions: {
+        provide: MarkedOptions,
+        useFactory: markedOptions,
+      },
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

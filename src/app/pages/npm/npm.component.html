@@ -13,7 +13,7 @@
         <li>To load our very own modules</li>
       </ul>
       <p>Run the following commands:</p>
-      <!--<app-command-line dataLine="2,3" [source]="lodashInstall"></app-command-line>-->
+      <app-command-line dataLine="2,3" [source]="lodashInstall"></app-command-line>
       <p>
         <span class="badge badge-primary">2</span> init a npm project.
       </p>
@@ -42,32 +42,33 @@
         Exercise
       </h2>
       <p>Run the following commands in your console.</p>
-      <!--<app-command-line [source]="noteFile"></app-command-line>-->
+      <app-command-line [source]="noteFile"></app-command-line>
       <p>In the same directory create a file called note.js</p>
-      <!--<markdown ngPreserveWhitespaces lineHighlight [line]="'2-4'">-->
-        <!--&gt; note.js-->
-        <!--```javascript-->
-        <!--console.log('Starting note.js');-->
-        <!--module.exports.name = 'Jon';-->
-        <!--module.exports.lastName = 'doe';-->
-        <!--module.exports.age = 5;-->
-        <!--```-->
-      <!--</markdown>-->
+      <markdown ngPreserveWhitespaces lineHighlight [line]="'2-4'">
+        > note.js
+        ```javascript
+        console.log('Starting note.js');
+        module.exports.name = 'Jon';
+        module.exports.lastName = 'doe';
+        module.exports.age = 5;
+        ```
+      </markdown>
       <span class="badge badge-primary">2-4</span> We tell node to export an object with the <b>name</b>, <b>lastName</b> and <b>age</b> properties
       <hr>
       <p>We will create a file called <b>app.js</b> with the following content:</p>
-      <!--<markdown ngPreserveWhitespaces lineHighlight [line]="'2,3,4'" [lineOffset]="0" data-type="text/html">-->
-        <!--```javascript-->
-        <!--console.log('Starting app');-->
-        <!--const {{'{'}} name, lastName, age {{ '}' }} = require('./note.js');-->
-        <!--const fs = require('fs');-->
-        <!--fs.appendFile('greetings.txt', 'Hello World', function(err) {{'{'}}-->
-        <!--if (err) {{'{'}}-->
-        <!--console.log('Unable to write the file');-->
-        <!--{{ '}' }}-->
-        <!--{{ '}' }});-->
-        <!--```-->
-      <!--</markdown>-->
+      <markdown ngPreserveWhitespaces lineHighlight [line]="'2,3,4'" [lineOffset]="0" data-type="text/html">
+        > app.js
+        ```javascript
+        console.log('Starting app');
+        const {{'{'}} name, lastName, age {{ '}' }} = require('./note.js');
+        const fs = require('fs');
+        fs.appendFile('greetings.txt', 'Hello World', function(err) {{'{'}}
+          if (err) {{'{'}}
+            console.log('Unable to write the file');
+          {{ '}' }}
+        {{ '}' }});
+        ```
+      </markdown>
       <p><span class="badge badge-primary">2</span> imports the note module.</p>
       <p>
         <span class="badge badge-primary">3</span> Here we load the <b>fs</b> module <i>(This is a native module of node)</i>.
