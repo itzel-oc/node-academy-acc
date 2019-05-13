@@ -10,6 +10,7 @@ export class RunkitComponent implements OnInit {
 
   @Input() source = '';
   @Input() preamble = '';
+  @Input() mode = '';
 
   @ViewChild('embedRunkit') runKitEmbedComponent: RunKitEmbedComponent;
 
