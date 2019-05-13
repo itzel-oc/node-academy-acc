@@ -8,7 +8,8 @@ import { NpmComponent } from './pages/npm/npm.component';
 import {RunkitModule} from './shared/runkit/runkit.module';
 import {PrismComponentsModule} from './shared/prism-components/prism-components.module';
 import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
-import {ExercisesModule} from './pages/exercises/exercises.module';
+import {NpmModule} from './pages/exercises/npm/npm.module';
+import {ExpressModule} from './pages/exercises/express/express.module';
 
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -40,7 +41,8 @@ export function markedOptions(): MarkedOptions {
     AppRoutingModule,
     RunkitModule,
     PrismComponentsModule,
-    ExercisesModule,
+    NpmModule,
+    ExpressModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
