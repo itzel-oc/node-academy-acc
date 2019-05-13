@@ -23,6 +23,10 @@ _.toUpper('---Hello-world---');
     mkdir notes-node && cd notes-node
   `;
 
+  usingLogger = `
+const var = true;
+  `;
+
   constructor() { }
 
   ngOnInit() {

@@ -45,18 +45,14 @@
   ```
 </markdown>
 <ul>
-  <li>To test your code run the following commands in the node repl</li>
+  <li>Go to the parent folder of your new module</li>
 </ul>
 <app-command-line [source]="indexFileContent"></app-command-line>
 <ul>
   <li>Run the following code in your node repl</li>
 </ul>
-<markdown ngPreserveWhitespaces data-type="text/html">
-  ```javascript
-  const util = require('logUtil');
-  util.logger('./hello-world.txt', 'INFO', 'Hello World!');
-  ```
-</markdown>
+<app-runkit #runkitOne [source]="usingLogger" [preamble]="usingLoggerPre"></app-runkit>
+
 
 
 

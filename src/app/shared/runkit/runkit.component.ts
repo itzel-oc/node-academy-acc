@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import { RunKitEmbedComponent } from 'angular-runkit';
 
 @Component({
   selector: 'app-runkit',
@@ -10,7 +11,13 @@ export class RunkitComponent implements OnInit {
   @Input() source = '';
   @Input() preamble = '';
 
+  @ViewChild('embedRunkit') runKitEmbedComponent: RunKitEmbedComponent;
+
   constructor() { }
+
+  evaluate() {
+    this.runKitEmbedComponent.evaluate();
+  }
 
   ngOnInit() {
   }

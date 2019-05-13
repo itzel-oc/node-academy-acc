@@ -4,6 +4,7 @@ import { NpmComponent } from './npm/npm.component';
 import { Exercise1Component } from './npm/exercise1/exercise1.component';
 import {PrismComponentsModule} from '../../shared/prism-components/prism-components.module';
 import {MarkdownModule} from 'ngx-markdown';
+import {RunkitModule} from '../../shared/runkit/runkit.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {MarkdownModule} from 'ngx-markdown';
   imports: [
     CommonModule,
     PrismComponentsModule,
-    MarkdownModule.forChild()
+    MarkdownModule.forChild(),
+    RunkitModule
   ]
 })
 export class ExercisesModule { }
