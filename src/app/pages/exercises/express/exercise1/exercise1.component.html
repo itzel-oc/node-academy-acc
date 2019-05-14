@@ -1,52 +1,69 @@
-<div class="display-4">Exercise 1</div>
-<h2 class="mt-5">Requirements</h2>
-<ul>
-  <li>Create an express app and a new server using the port <b>3000</b></li>
-  <li>Create a new endpoint</li>
-  <li>The new endpoint should return a set of mock customers</li>
-  <li>The response should come in JSON format</li>
-  <li>The Content/Type header should be application/json</li>
-</ul>
-<h2>Setting our app with express</h2>
-<ul class="mt-5">
-  <li>Create a new file called <b>app.js</b> with the following content</li>
-</ul>
-<markdown ngPreserveWhitespaces data-type="text/html">
-  > app.js
-  ```javascript
-  const express = require('express');
-  const chalk = require('chalk');
-  const app = express();
-  app.get('/customers', (req, res) => res.json([
-    {{ '{' }}
-      name: 'John',
-      lastName: 'Doe',
-      email: 'Doe@gmail.com'
-    {{ '}' }}, {{ '{' }}
-      name: 'Jose',
-      lastName: 'Perez',
-      email: 'Jose@gmail.com'
-    {{ '}' }}
-  ]))
-  module.exports = app;
-  ```
-</markdown>
-<ul>
-  <li>You can test your endpoint using the following embed runkit</li>
-</ul>
-<app-runkit mode='endpoint' [source]="appFile" [preamble]="runkitEndpoint">
-</app-runkit>
-<ul>
-  <li>Lets create our web server</li>
-</ul>
-<markdown ngPreserveWhitespaces data-type="text/html">
-  > bin/www
-  ```javascript
-  const app = require(../app);
-  const port = 3000;
-  app.listen(port, () => {{ '{' }}
-      console.log('Listening in port ' + port);
-  {{ '}' }});
-  ```
-</markdown>
-
+<div class="exercise__item">
+  <h2 id="exercise-1" class="exercise__item--title">Exercise 1</h2>
+</div>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Requirements
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Create an express app and a new server using the port <b>3000</b></li>
+      <li>Create a new endpoint</li>
+      <li>The new endpoint should return a set of mock customers</li>
+      <li>The response should come in JSON format</li>
+      <li>The Content/Type header should be application/json</li>
+    </ul>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Setting our app with express
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul class="mt-5">
+      <li>Create a new file called <b>app.js</b> with the following content</li>
+    </ul>
+    <markdown ngPreserveWhitespaces data-type="text/html">
+      > app.js
+      ```javascript
+      const express = require('express');
+      const chalk = require('chalk');
+      const app = express();
+      app.get('/customers', (req, res) => res.json([
+      {{ '{' }}
+        name: 'John',
+        lastName: 'Doe',
+        email: 'Doe@gmail.com'
+      {{ '}' }}, {{ '{' }}
+        name: 'Jose',
+        lastName: 'Perez',
+        email: 'Jose@gmail.com'
+      {{ '}' }}
+      ]));
+      module.exports = app;
+      ```
+    </markdown>
+    <ul>
+      <li>You can test your endpoint using the following embed runkit</li>
+    </ul>
+    <app-runkit mode='endpoint' [source]="appFile" [preamble]="runkitEndpoint">
+    </app-runkit>
+    <ul>
+      <li>Lets create our web server</li>
+    </ul>
+    <markdown ngPreserveWhitespaces data-type="text/html">
+      > bin/www
+      ```javascript
+      const app = require(../app);
+      const port = 3000;
+      app.listen(port, () => {{ '{' }}
+        console.log('Listening in port ' + port);
+      {{ '}' }});
+      ```
+    </markdown>
+  </mat-expansion-panel>
+</mat-accordion>

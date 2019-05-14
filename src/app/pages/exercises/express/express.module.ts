@@ -5,6 +5,8 @@ import {MarkdownModule} from 'ngx-markdown';
 import {RunkitModule} from '../../../shared/runkit/runkit.module';
 import {ExpressComponent} from './express.component';
 import {Exercise1Component} from './exercise1/exercise1.component';
+import {MatExpansionModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {Exercise1Component} from './exercise1/exercise1.component';
     CommonModule,
     PrismComponentsModule,
     MarkdownModule.forChild(),
-    RunkitModule
+    RunkitModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ]
 })
 export class ExpressModule { }
