@@ -1,0 +1,25 @@
+<div class="display-4">Setting a test environment</div>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Adding mocha to your project
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ul>
+      <li>Run the following command</li>
+    </ul>
+    <app-command-line class="m-t5" [source]="addingMocha"></app-command-line>
+    <ul>
+      <li>Edit your test script to have the following</li>
+    </ul>
+    <markdown ngPreserveWhitespaces data-type="text/html">
+      > package.json
+      ```json
+      "scripts": {{ '{' }}
+        "test": "mocha './test/**/*.spec.js --exit'"
+      {{ '}' }}
+      ```
+    </markdown>
+  </mat-expansion-panel>
+</mat-accordion>
