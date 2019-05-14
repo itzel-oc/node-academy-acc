@@ -5,6 +5,8 @@ import { NpmComponent } from './npm.component';
 import {PrismComponentsModule} from '../../../shared/prism-components/prism-components.module';
 import {MarkdownModule} from 'ngx-markdown';
 import {RunkitModule} from '../../../shared/runkit/runkit.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {RunkitModule} from '../../../shared/runkit/runkit.module';
     CommonModule,
     PrismComponentsModule,
     MarkdownModule.forChild(),
-    RunkitModule
+    RunkitModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
   ],
   exports: [
     NpmComponent
