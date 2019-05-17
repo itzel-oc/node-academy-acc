@@ -45,8 +45,7 @@ fs.readFileSync('./logger.txt', { encoding: 'utf8'}, (err, data) => {
   " }); " +
 " } ";
 
-  usingLoggerPre = `
-  `;
+  usingLoggerPre = '';
 
   constructor() {
     this.usingLoggerPre =  `
@@ -56,7 +55,6 @@ fs.mkdirSync('./logUtil', { recursive: true });
 fs.writeFileSync('./logUtil/logger.js', "${ this.logger }");
 fs.writeFileSync('./logUtil/index.js', "${ this.index }");
   `;
-    console.log(this.usingLoggerPre);
   }
 
   ngAfterViewInit(): void {
