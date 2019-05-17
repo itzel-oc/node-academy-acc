@@ -17,7 +17,7 @@
       > package.json
       ```json
       "scripts": {{ '{' }}
-        "test": "mocha './test/**/*.spec.js --exit'"
+        "test": "mocha './test/unit/**/*.spec.js --exit'"
       {{ '}' }}
       ```
     </markdown>
@@ -33,7 +33,7 @@
       const expect = require('chai').expect;
       describe("logger.js", () => {{ '{' }}
         it("Should create a log file with an info level", (done) => {{ '{' }}
-          logger("./test/test.txt", "INFO", "Test", () => {{ '{' }}
+          logger("./test/unit/test.txt", "INFO", "Test", () => {{ '{' }}
             const filePath = path.resolve(__dirname, "./test.txt");
             fs.readFile(filePath, "utf8", (err, content) => {{ '{' }}
               if (err) {{ '{' }}

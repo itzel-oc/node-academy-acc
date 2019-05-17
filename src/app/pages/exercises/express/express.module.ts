@@ -7,11 +7,13 @@ import {ExpressComponent} from './express.component';
 import {Exercise1Component} from './exercise1/exercise1.component';
 import {MatExpansionModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     ExpressComponent,
-    Exercise1Component
+    Exercise1Component,
+    TestComponent
   ],
   imports: [
     CommonModule,
