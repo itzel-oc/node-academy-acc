@@ -23,7 +23,7 @@ node
 
   usingLogger = `
 let util = require('./logUtil');
-util.logger('./logger.txt', 'INFO', 'Hello World!');
+util.logger('./logger.txt', 'INFO', 'Hello World!', () => console.log('File created'));
 fs.readFileSync('./logger.txt', { encoding: 'utf8'}, (err, data) => {
     console.log(data);
 });
@@ -35,13 +35,14 @@ fs.readFileSync('./logger.txt', { encoding: 'utf8'}, (err, data) => {
 
   logger = "let path = require('path'); " +
   "let fs = require('fs'); " +
-  "module.exports = (logPath, level, message) => { " +
+  "module.exports = (logPath, level, message, callback) => { " +
   "let p = path.resolve(logPath); " +
   "let log = new Date().toString() +  '   ' + level + '   ' + message; " +
   "fs.writeFileSync(p, log, (err) => { "+
     " if(err) { " +
       " console.log(err); " +
     " } " +
+    " callback() " +
   " }); " +
 " } ";
 

@@ -21,5 +21,31 @@
       {{ '}' }}
       ```
     </markdown>
+    <ul>
+      <li>Create a directory called <b>test</b> and inside of it add the following file, <b>logger.spec.js</b></li>
+    </ul>
+    <markdown ngPreserveWhitespaces data-type="text/html">
+      > test/logger.spec.js
+      ```javascript
+      const logger = require('../logger');
+      const fs = require('fs');
+      const path = require('path');
+      const expect = require('chai').expect;
+      describe("logger.js", () => {{ '{' }}
+        it("Should create a log file with an info level", (done) => {{ '{' }}
+          logger("./test/test.txt", "INFO", "Test", () => {{ '{' }}
+            const filePath = path.resolve(__dirname, "./test.txt");
+            fs.readFile(filePath, "utf8", (err, content) => {{ '{' }}
+              if (err) {{ '{' }}
+                throw err;
+              {{ '}' }}
+              expect(/INFO.*Test/gi.test(content)).to.equal(true);
+              done();
+            {{ '}' }});
+          {{ '}' }});
+        {{ '}' }})
+      {{ '}' }});
+      ```
+    </markdown>
   </mat-expansion-panel>
 </mat-accordion>
