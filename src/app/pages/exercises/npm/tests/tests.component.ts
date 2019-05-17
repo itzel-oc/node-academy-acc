@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TestsComponent implements OnInit {
 
   addingMocha = `
-npm i mocha --save
+npm i mocha chai --save-dev
   `;
   constructor() { }
 
