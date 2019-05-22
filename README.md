@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## How to add a new section
+
+Let's add a new exercise for the npm section
+
+* We will need a new component inside the exercises/npm module
+
+```
+ng g c pages/exercises/npm/exercise2 --spec=false
+```
+
+* You can use the [**Exercise 1**](https://github.com/JBetoReyes/node-academy-acc/blob/master/src/app/pages/exercises/npm/exercise1/exercise1.component.html#L2) component as an example of how to fill your instructions
+* Now we will add some generic styles to our component
+
+> **exercise2.component.scss** 
+```
+@import '../npm.component';
+```
