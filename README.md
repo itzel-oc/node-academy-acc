@@ -43,3 +43,5 @@ ng g c pages/exercises/npm/exercise2 --spec=false
 ```
 @import '../npm.component';
 ```
+
+* To see the content of your component add it to another parent component like the [npm component](https://github.com/JBetoReyes/node-academy-acc/blob/master/src/app/pages/exercises/npm/npm.component.html#L19)
