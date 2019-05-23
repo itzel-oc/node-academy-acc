@@ -11,6 +11,9 @@ import { TestComponent } from './test/test.component';
 import { ApiE1Component } from './api-e1/api-e1.component';
 import { ApiE2Component } from './api-e2/api-e2.component';
 import { ApiE3Component } from './api-e3/api-e3.component';
+import { ApiE4Component } from './api-e4/api-e4.component';
+import { ApiE5Component } from './api-e5/api-e5.component';
+import { ApiE6Component } from './api-e6/api-e6.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ApiE3Component } from './api-e3/api-e3.component';
     TestComponent,
     ApiE1Component,
     ApiE2Component,
-    ApiE3Component
+    ApiE3Component,
+    ApiE4Component,
+    ApiE5Component,
+    ApiE6Component
   ],
   imports: [
     CommonModule,
