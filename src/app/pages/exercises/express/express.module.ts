@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TestComponent } from './test/test.component';
 import { ApiE1Component } from './api-e1/api-e1.component';
 import { ApiE2Component } from './api-e2/api-e2.component';
+import { ApiE3Component } from './api-e3/api-e3.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ApiE2Component } from './api-e2/api-e2.component';
     Exercise1Component,
     TestComponent,
     ApiE1Component,
-    ApiE2Component
+    ApiE2Component,
+    ApiE3Component
   ],
   imports: [
     CommonModule,
