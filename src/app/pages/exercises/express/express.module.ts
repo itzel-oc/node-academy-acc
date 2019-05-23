@@ -9,13 +9,15 @@ import {MatExpansionModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TestComponent } from './test/test.component';
 import { ApiE1Component } from './api-e1/api-e1.component';
+import { ApiE2Component } from './api-e2/api-e2.component';
 
 @NgModule({
   declarations: [
     ExpressComponent,
     Exercise1Component,
     TestComponent,
-    ApiE1Component
+    ApiE1Component,
+    ApiE2Component
   ],
   imports: [
     CommonModule,
