@@ -8,12 +8,14 @@ import {Exercise1Component} from './exercise1/exercise1.component';
 import {MatExpansionModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TestComponent } from './test/test.component';
+import { ApiE1Component } from './api-e1/api-e1.component';
 
 @NgModule({
   declarations: [
     ExpressComponent,
     Exercise1Component,
-    TestComponent
+    TestComponent,
+    ApiE1Component
   ],
   imports: [
     CommonModule,
