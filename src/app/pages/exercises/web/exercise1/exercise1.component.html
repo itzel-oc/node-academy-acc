@@ -10,11 +10,7 @@
     </mat-expansion-panel-header>
     <ul>
       <li>Create a npm project</li>
-      <!-- <li>Create a function that creates a file with a log message</li>
-      <li>The function should accept three arguments</li>
-      <li>The first argument should be the name and path of your file; ie. <b>my/path/fileName</b></li>
-      <li>The second argument should be the Level of the message</li>
-      <li>The third argument should be the message that you want to log</li> -->
+      <li>Create an express server that returns an html file</li>
     </ul>
   </mat-expansion-panel>
 </mat-accordion>
@@ -27,49 +23,51 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <!-- <ul>
+    <ul>
       <li>Run the following commands</li>
     </ul>
     <app-command-line [source]="initProject"></app-command-line>
     <ul>
-      <li>Create a file called <b>logger.js</b></li>
-    </ul>
-    <markdown ngPreserveWhitespaces data-type="text/html">
-      > logger.js
-      ```javascript
-      const fs = require('fs');
-      const path = require('path');
-      module.exports = (logPath, level, message, callback) => {{ '{' }}
-        const p = path.resolve(logPath);
-        const log = `${{ '{' }}new Date().toString(){{ '}' }}   ${{ '{' }}level{{ '}' }}    ${{ '{' }}message{{ '}' }}`;
-        fs.writeFile(p, log, (err) => {{ '{' }}
-          if(err) {{ '{' }}
-            console.log(err);
-          {{ '}' }}
-          callback();
-        {{ '}' }});
-      {{ '}' }};
-      ```
-    </markdown>
-    <ul>
-      <li>Add the following code in the <b>index.js</b> file</li>
+      <li>Edit the <b>index.js</b> file</li>
     </ul>
     <markdown ngPreserveWhitespaces data-type="text/html">
       > index.js
       ```javascript
-        module.exports = {{ '{' }}
-          logger: require('./logger')
-        {{ '}' }};
+      const express = require('express');
+      const path = require('path');
       ```
     </markdown>
     <ul>
-      <li>Go to the parent folder of your new module</li>
+      <li><a href="https://www.npmjs.com/package/express" class="ref-btn-link">Express</a> is an npm module, a routing framework.</li>
+      <li><a href="https://nodejs.org/api/path.html" class="ref-btn-link">Path</a> is Node's native utility to work with file and directory paths.</li>
+      <br>
+      <li>Now we init express and set the port we want our app to run in, add this to your <b>index.js</b> file:</li>
     </ul>
-    <app-command-line [source]="indexFileContent"></app-command-line>
+    <markdown ngPreserveWhitespaces data-type="text/html">
+      > index.js
+      ```javascript
+      let app = express();
+      let port = 3000;
+      ```
+    </markdown>
     <ul>
-      <li>Run the following code in your node repl</li>
+      <li>Now we will add the code to serve content, add this to your <b>index.js</b> file:</li>
     </ul>
-    <app-runkit #runkitOne [source]="usingLogger" [preamble]="usingLoggerPre"></app-runkit> -->
-    
+    <markdown ngPreserveWhitespaces data-type="text/html">
+      > index.js
+      ```javascript
+      app.use('/', express.static(
+        path.join(__dirname, 'html')
+      ));
+      app.listen(port, console.log('web server listening on port '+port));
+      ```
+    </markdown>
+    <ul>
+      <li>Run the server</li>
+    </ul>
+    <app-command-line [source]="runServer"></app-command-line>
+    <ul>
+      <li>Open your browser to <a href="http://localhost:3000">this page</a></li>
+    </ul>
   </mat-expansion-panel>
 </mat-accordion>

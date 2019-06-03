@@ -7,15 +7,11 @@ import {MarkdownModule} from 'ngx-markdown';
 import {RunkitModule} from '../../../shared/runkit/runkit.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material';
-// import { TestsComponent } from './tests/tests.component';
-// import { Exercise2Component } from './exercise2/exercise2.component';
-// import { Exercise3Component } from './exercise3/exercise3.component';
 
 @NgModule({
   declarations: [
     Exercise1Component,
-    WebComponent,
-    // TestsComponent,
+    WebComponent
   ],
   imports: [
     CommonModule,
