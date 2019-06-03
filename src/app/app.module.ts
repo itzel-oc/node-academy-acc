@@ -10,6 +10,7 @@ import {PrismComponentsModule} from './shared/prism-components/prism-components.
 import {MarkdownModule, MarkedOptions, MarkedRenderer} from 'ngx-markdown';
 import {NpmModule} from './pages/exercises/npm/npm.module';
 import {ExpressModule} from './pages/exercises/express/express.module';
+import {WebModule} from './pages/exercises/web/web.module';
 
 export function markedOptions(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -43,6 +44,7 @@ export function markedOptions(): MarkedOptions {
     PrismComponentsModule,
     NpmModule,
     ExpressModule,
+    WebModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
