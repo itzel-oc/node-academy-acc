@@ -11,7 +11,7 @@ const {
 
 module.exports = {
     async initConnection(app) {
-        const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
+        const sequelize = new Sequelize('academy', DB_USERNAME, DB_PASSWORD, {
             dialect: 'postgres',
             host: 'localhost',
             pool: {
@@ -29,7 +29,7 @@ module.exports = {
             await sequelize.authenticate();
             debug('Connection has been established successfully');
         } catch(err) {
-            debug(error);
+            debug(err);
         }
         return sequelize;
     },

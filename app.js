@@ -18,5 +18,13 @@ app.get('/posts', (req, res) => {
     debug('req query', req.query);
     res.json(listOfPosts);
 });
+  
+  // POST method route
+  app.post('/posts', function (req, res) {
+    debug('req body', req.body);
+    debug('req query', req.query);
+    res.json(newPost);
+  });
+
 
 module.exports = app;
